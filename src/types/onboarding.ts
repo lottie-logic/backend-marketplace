@@ -11,3 +11,4 @@ export interface AdminOnboardingUpdateStateReq {}
 export type OnboardingStateRes = {
   status: OnboardingState;
 };
+
