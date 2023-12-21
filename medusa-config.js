@@ -43,6 +43,25 @@ const plugins = [
     },
   },
   {
+    resolve: `medusa-plugin-algolia`,
+    options: {
+      applicationId: process.env.ALGOLIA_APP_ID,
+      adminApiKey: process.env.ALGOLIA_ADMIN_API_KEY,
+     settings: {
+      indexName: {
+        indexSettings: {
+          searchableAttributes,
+          attributesToRetrieve,
+        },
+        transformer: (product) => ({ 
+          objectID: product.id, 
+          // other attributes...
+        }),
+      },
+    },
+    },
+  },
+  {
     resolve: "@medusajs/admin",
     /** @type {import('@medusajs/admin').PluginOptions} */
     options: {
